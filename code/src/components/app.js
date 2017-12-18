@@ -78,9 +78,10 @@ class App extends React.Component {
 
           <p>Momssumma:</p>
           <input
+            readOnly
             type="number"
             name="exVat"
-            value={this.state.incVat - this.state.exVat} />
+            value={(this.state.incVat - this.state.exVat).toFixed(2)} />
         </form>
       </div>
     )
