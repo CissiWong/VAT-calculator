@@ -62,14 +62,14 @@ class App extends React.Component {
         </form>
 
         <form>
-          <p>Example calculating ex vat for 1000kr inc vat @ 25%: {incVatToExtVat(25, 1000)}</p>
+          <p>Summa inkl. moms:</p>
           <input
             type="number"
             name="incVat"
             onChange={this.handleIncVat}
             value={this.state.incVat} />
 
-          <p>Example calculating inc vat for 600kr ex vat @ 6%: {exVatToIncVat(6, 600)}</p>
+          <p>Summa exkl. moms:</p>
           <input
             type="number"
             name="exVat"
@@ -80,8 +80,7 @@ class App extends React.Component {
           <input
             type="number"
             name="exVat"
-            onChange={this.handleExVat}
-            value={this.state.exVat} />
+            value={this.state.incVat - this.state.exVat} />
         </form>
       </div>
     )
